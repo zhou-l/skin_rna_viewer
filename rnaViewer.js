@@ -2294,8 +2294,8 @@ function rnaViewerMain()
 
       var progsvg = d3.select('.progress')
 		.append('svg')
-		.attr('height', 100)
-		.attr('width', 500);
+		.attr('height', 400)
+		.attr('width', 600);
 
 	var states = ['started', 'inProgress', 'completed'],
 	    segmentWidth = 100,
@@ -2312,7 +2312,8 @@ function rnaViewerMain()
 		.attr('fill', 'gray')
 		.attr('height', 15)
 		.attr('width', function(){
-			return segmentWidth * states.length;
+			// return segmentWidth * states.length;
+            return 0;
 		})
 		.attr('x', 0);
 
@@ -2329,9 +2330,9 @@ function rnaViewerMain()
 
      var progText = progsvg.append("text")
      .attr("class", "progress-text")
-    .style("font-size", "12px")
+     .style("font-size", "26px")
     .attr("x", 320)
-    .attr("y", 10) 
+    .attr("y", 50) 
     .text(function () {
         return "Loading RNA data file...";
     })
@@ -2398,7 +2399,20 @@ function rnaViewerMain()
                                 return (loadProgress) * 3 * segmentWidth; // the multiplier 3 makes the complete width of the progress bar
                             });
 
-                        progText.text(function(){return "读取文件中，请稍后" +"..." + (loadProgress*100).toFixed(0)+"%";})
+                        progText.text(function(){return "数据读取中" +"...";})
+                        // progText.text(function(){return "<p>数据读取时间较长，请稍等.</p><p>请不要关闭窗口!</p>" +"..." ;})
+                        var infoText = "数据读取时间较长，请稍等. 请不要关闭窗口!\n若浏览器提示页面未响应，请选择‘等待’.";
+                        progText.selectAll("tspan.text")
+                            .data(d => infoText.split("\n"))
+                            .enter()
+                            .append("tspan")
+                            .attr("class", "text")
+                            .text(d => d)
+                            .style("font-size", "16px")
+                            .attr("x", 120)
+                            .attr("dx", 10)
+                            .attr("dy", 52);
+
                     };
                 });
             })

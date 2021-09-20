@@ -2384,6 +2384,7 @@ function rnaViewerMain()
 
         // Use the progress bar for loading the main file
         d3.csv("./data/TPM_159.csv")
+        // d3.csv("./data/tpm_159_test.csv")
             .on("progress", function (d) {
                 var i = d3.interpolate(loadProgress, d.loaded / d.total);
                 d3.transition().tween("progress", function () {

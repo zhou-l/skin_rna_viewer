@@ -211,8 +211,8 @@ function drawFemaleBodyView(data, className, divName, width, height, margin)
             return pathStr;
         })
         .style("fill", function () {
-            if(g_selectedRow >= 0 && g_selectedRow < g_tpmMeanVal.length) 
-                return g_exprValColorMap(+g_tpmMeanVal[g_selectedRow].PalmSole);
+            if(g_selectedRow >= 0 && g_selectedRow < g_tpmFullData.length) 
+                return g_exprValColorMap(+g_tpmFullData[g_selectedRow].PalmSole);
             else
                 return g_exprValColorMap(0); })
         .style("opacity","0.1")
@@ -236,8 +236,8 @@ function drawFemaleBodyView(data, className, divName, width, height, margin)
                 return pathStr;
             })
             .style("fill", function () {
-                if(g_selectedRow >= 0 && g_selectedRow < g_tpmMeanVal.length) 
-                    return g_exprValColorMap(+g_tpmMeanVal[g_selectedRow].PalmSole);
+                if(g_selectedRow >= 0 && g_selectedRow < g_tpmFullData.length) 
+                    return g_exprValColorMap(+g_tpmFullData[g_selectedRow].PalmSole);
                 else
                     return g_exprValColorMap(0); })
             .style("opacity", "0.5")
@@ -261,9 +261,9 @@ function drawFemaleBodyView(data, className, divName, width, height, margin)
                 return pathStr;
             })
             .style("fill", function () {
-                if(g_selectedRow >= 0 && g_selectedRow < g_tpmMeanVal.length) 
+                if(g_selectedRow >= 0 && g_selectedRow < g_tpmFullData.length) 
                 {
-                    var val = +g_tpmMeanVal[g_selectedRow].PalmSole;
+                    var val = +g_tpmFullData[g_selectedRow].PalmSole;
                     console.log(val);
                     return g_exprValColorMap(val);
                 }
@@ -291,8 +291,8 @@ function drawFemaleBodyView(data, className, divName, width, height, margin)
                 return pathStr;
             })
             .style("fill", function () {
-                if(g_selectedRow >= 0 && g_selectedRow < g_tpmMeanVal.length) 
-                    return g_exprValColorMap(+g_tpmMeanVal[g_selectedRow].PalmSole);
+                if(g_selectedRow >= 0 && g_selectedRow < g_tpmFullData.length) 
+                    return g_exprValColorMap(+g_tpmFullData[g_selectedRow].PalmSole);
                 else
                     return g_exprValColorMap(0); })
             .style("opacity", "0.5")
@@ -317,8 +317,8 @@ function drawFemaleBodyView(data, className, divName, width, height, margin)
                 return pathStr;
             })
             .style("fill", function () {
-                if(g_selectedRow >= 0 && g_selectedRow < g_tpmMeanVal.length) 
-                    return g_exprValColorMap(+g_tpmMeanVal[g_selectedRow].Extremities);
+                if(g_selectedRow >= 0 && g_selectedRow < g_tpmFullData.length) 
+                    return g_exprValColorMap(+g_tpmFullData[g_selectedRow].Extremities);
                 else
                     return g_exprValColorMap(0); })
             .style("opacity", "0.5")
@@ -585,8 +585,8 @@ function drawMaleBodyView(data, className, divName, width, height, margin)
             return pathStr;
         })
         .style("fill", function () {
-            if(g_selectedRow >= 0 && g_selectedRow < g_tpmMeanVal.length) 
-                return g_exprValColorMap(+g_tpmMeanVal[g_selectedRow].PalmSole);
+            if(g_selectedRow >= 0 && g_selectedRow < g_tpmFullData.length) 
+                return g_exprValColorMap(+g_tpmFullData[g_selectedRow].PalmSole);
             else
                 return g_exprValColorMap(0); })
         .style("opacity","0.1")
@@ -610,8 +610,8 @@ function drawMaleBodyView(data, className, divName, width, height, margin)
                 return pathStr;
             })
             .style("fill", function () {
-                if(g_selectedRow >= 0 && g_selectedRow < g_tpmMeanVal.length) 
-                    return g_exprValColorMap(+g_tpmMeanVal[g_selectedRow].PalmSole);
+                if(g_selectedRow >= 0 && g_selectedRow < g_tpmFullData.length) 
+                    return g_exprValColorMap(+g_tpmFullData[g_selectedRow].PalmSole);
                 else
                     return g_exprValColorMap(0); })
             .style("opacity", "0.5")
@@ -635,9 +635,9 @@ function drawMaleBodyView(data, className, divName, width, height, margin)
                 return pathStr;
             })
             .style("fill", function () {
-                if(g_selectedRow >= 0 && g_selectedRow < g_tpmMeanVal.length) 
+                if(g_selectedRow >= 0 && g_selectedRow < g_tpmFullData.length) 
                 {
-                    var val = +g_tpmMeanVal[g_selectedRow].PalmSole;
+                    var val = +g_tpmFullData[g_selectedRow].PalmSole;
                     console.log(val);
                     return g_exprValColorMap(val);
                 }
@@ -665,8 +665,8 @@ function drawMaleBodyView(data, className, divName, width, height, margin)
                 return pathStr;
             })
             .style("fill", function () {
-                if(g_selectedRow >= 0 && g_selectedRow < g_tpmMeanVal.length) 
-                    return g_exprValColorMap(+g_tpmMeanVal[g_selectedRow].PalmSole);
+                if(g_selectedRow >= 0 && g_selectedRow < g_tpmFullData.length) 
+                    return g_exprValColorMap(+g_tpmFullData[g_selectedRow].PalmSole);
                 else
                     return g_exprValColorMap(0); })
             .style("opacity", "0.5")
@@ -691,8 +691,8 @@ function drawMaleBodyView(data, className, divName, width, height, margin)
                 return pathStr;
             })
             .style("fill", function () {
-                if(g_selectedRow >= 0 && g_selectedRow < g_tpmMeanVal.length) 
-                    return g_exprValColorMap(+g_tpmMeanVal[g_selectedRow].Extremities);
+                if(g_selectedRow >= 0 && g_selectedRow < g_tpmFullData.length) 
+                    return g_exprValColorMap(+g_tpmFullData[g_selectedRow].Extremities);
                 else
                     return g_exprValColorMap(0); })
             .style("opacity", "0.5")
@@ -844,7 +844,7 @@ function drawMaleBodyView(data, className, divName, width, height, margin)
 }
 
 
-function setupSearchView(g_tpmMeanVal, className, divName, width, height, margin)
+function setupSearchView(tpmData, className, divName, width, height, margin)
 {
     d3.selectAll(".rnaInfoSvg").remove();
     var svg = d3.select("#rnaInfo")
@@ -868,9 +868,9 @@ function setupSearchView(g_tpmMeanVal, className, divName, width, height, margin
     .text(function(){
         var info = null;
         if (g_isEnglish)
-            info = g_tpmMeanVal[g_selectedRow].Symbol + " is found. Read more by clicking tags below.";
+            info = tpmData[g_selectedRow].Symbol + " is found. Read more by clicking tags below.";
         else
-            info = g_tpmMeanVal[g_selectedRow].Symbol + " 已被找到. 点击标签获取更多关于此RNA的信息.";
+            info = tpmData[g_selectedRow].Symbol + " 已被找到. 点击标签获取更多关于此RNA的信息.";
         return info;
     })
     ;
@@ -900,7 +900,7 @@ function setupSearchView(g_tpmMeanVal, className, divName, width, height, margin
             link = "https://www.proteinatlas.org/search";
         else
             return;
-        link += g_tpmMeanVal[g_selectedRow].Symbol;
+        link += tpmData[g_selectedRow].Symbol;
         window.open(link);   
     });
     // .append()
@@ -926,7 +926,7 @@ function setupSearchView(g_tpmMeanVal, className, divName, width, height, margin
             link = "https://www.proteinatlas.org/search/";
         else
             return;
-        link += g_tpmMeanVal[g_selectedRow].Symbol;
+        link += tpmData[g_selectedRow].Symbol;
         window.open(link);   
     });
     
@@ -983,13 +983,13 @@ function doSearch() {
     var txtName = document.getElementById("rnaSearchBox");
     console.log(txtName.value);
     // do a simple traversal, for now
-    for(var i = 0; i < g_tpmMeanVal.length; i++)
+    for(var i = 0; i < g_tpmFullData.length; i++)
     {
-        if(g_tpmMeanVal[i].Symbol.toLowerCase() === txtName.value.toLowerCase())
+        if(g_tpmFullData[i].Symbol.toLowerCase() === txtName.value.toLowerCase())
         {
             if(i != g_selectedRow){
                 g_selectedRow = i;
-                g_selectedData = g_tpmMeanVal[g_selectedRow];
+                g_selectedData = g_tpmFullData[g_selectedRow];
                 console.log("found!");
                 redrawAll();
             }
@@ -1002,13 +1002,13 @@ function doSearch() {
     var txtName = searchTerm;
     console.log(txtName);
     // do a simple traversal, for now
-    for(var i = 0; i < g_tpmMeanVal.length; i++)
+    for(var i = 0; i < g_tpmFullData.length; i++)
     {
-        if(g_tpmMeanVal[i].Symbol.toLowerCase() === txtName.toLowerCase())
+        if(g_tpmFullData[i].Symbol.toLowerCase() === txtName.toLowerCase())
         {
             if(i != g_selectedRow){
                 g_selectedRow = i;
-                g_selectedData = g_tpmMeanVal[g_selectedRow];
+                g_selectedData = g_tpmFullData[g_selectedRow];
                 console.log("found!");
                 redrawAll();
             }
@@ -1778,7 +1778,7 @@ function drawBarcharts(data, selectedRow, className, divName, width, height, mar
 
 function computeGroupStatistics()
 {
-    if(g_selectedRow < 0 || g_selectedRow >= g_tpmMeanVal.length)
+    if(g_selectedRow < 0 || g_selectedRow >= g_tpmFullData.length)
     return;
     if(g_tpmFullData == [])
         return;
@@ -1853,7 +1853,7 @@ function computeGroupStatistics()
 
 function redrawBodyViews()
 {
-    if(g_selectedRow < 0 || g_selectedRow >= g_tpmMeanVal.length)
+    if(g_selectedRow < 0 || g_selectedRow >= g_tpmFullData.length)
          return;
     if(g_tpmFullData == [])
         return;
@@ -2205,7 +2205,7 @@ function redrawAll()
     //    d3.select("#rnaInfoText")
     //    .text(function() {return g_tpmMeanVal[g_selectedRow].Symbol; });
     d3.selectAll(".rnaInfoSvg").remove();
-    setupSearchView(g_tpmMeanVal, "searchArea", "#rnaSearchBox", g_bvwidth, g_bvheight, g_margin);
+    setupSearchView(g_tpmFullData, "searchArea", "#rnaSearchBox", g_bvwidth, g_bvheight, g_margin);
 
     //    // update the bar charts
     //    d3.select("#barchart").remove();
@@ -2383,7 +2383,8 @@ function rnaViewerMain()
         }
 
         // Use the progress bar for loading the main file
-        d3.csv("./data/TPM_159.csv")
+        // d3.csv("./data/TPM_159.csv")
+        d3.csv("./data/my_tpm159_split_0.csv")
         // d3.csv("./data/tpm_159_test.csv")
             .on("progress", function (d) {
                 var i = d3.interpolate(loadProgress, d.loaded / d.total);
@@ -2464,12 +2465,12 @@ function rnaViewerMain()
     
 
                 // 2. setup search box
-                setupSearchView(g_tpmMeanVal, "searchArea", "#rnaSearchBox", g_bvwidth, g_bvheight, g_margin);
+                setupSearchView(g_tpmFullData, "searchArea", "#rnaSearchBox", g_bvwidth, g_bvheight, g_margin);
                 // 1.setup views
                 // drawFemaleBodyView(g_tpmMeanVal, "bodyMap", "#bodyView", g_bvwidth, g_bvheight, g_margin);
-                drawFemaleBodyView(g_tpmMeanVal, "bodyMap", "#bodyView", g_bvwidth, g_bvheight, g_margin);
+                drawFemaleBodyView(g_tpmFullData, "bodyMap", "#bodyView", g_bvwidth, g_bvheight, g_margin);
                 // the second body view
-                drawMaleBodyView(g_tpmMeanVal, "bodyMapM", "#bodyViewM", g_bvwidth, g_bvheight, g_margin);
+                drawMaleBodyView(g_tpmFullData, "bodyMapM", "#bodyViewM", g_bvwidth, g_bvheight, g_margin);
 
 
                 // draw the dotplot

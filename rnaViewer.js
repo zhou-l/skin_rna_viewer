@@ -843,6 +843,13 @@ function drawMaleBodyView(data, className, divName, width, height, margin)
     return svg_img;
 }
 
+function getUrlVars() {
+    var vars = {};
+    var parts = window.location.href.replace(/[?&]+([^=&]+)=([^&]*)/gi, function(m,key,value) {
+        vars[key] = value;
+    });
+    return vars;
+}
 
 function setupSearchView(tpmData, className, divName, width, height, margin)
 {
@@ -976,8 +983,16 @@ function setupSearchView(tpmData, className, divName, width, height, margin)
     d3.select("#rnaSearchButton")
     .on("click", function(){doSearch();})
 
+    // doSearchFromURL();
+
 }
 
+function doSearchFromURL(){
+
+   var searchTerm = getUrlVars();
+   console.log(searchTerm.rna);
+   doSearchFromProg(searchTerm.rna);
+}
 
 function doSearch() {
     var txtName = document.getElementById("rnaSearchBox");
@@ -2462,10 +2477,19 @@ function rnaViewerMain()
                         else
                             return "搜索";
                     })
+
+                d3.select("#headText")
+                   .attr("h2",function(){
+                       if(g_isEnglish)
+                       return "Skin RNA Viewer";
+                       else
+                       return "皮肤RNA视图";
+                   })
     
 
                 // 2. setup search box
                 setupSearchView(g_tpmFullData, "searchArea", "#rnaSearchBox", g_bvwidth, g_bvheight, g_margin);
+                doSearchFromURL(); // Search the term in the URL
                 // 1.setup views
                 // drawFemaleBodyView(g_tpmMeanVal, "bodyMap", "#bodyView", g_bvwidth, g_bvheight, g_margin);
                 drawFemaleBodyView(g_tpmFullData, "bodyMap", "#bodyView", g_bvwidth, g_bvheight, g_margin);

@@ -2291,6 +2291,9 @@ function rnaViewerMain()
     //     .attr("visibility", "hidden");
 
     d3.select("langSwitchButt").attr("visibility", "hidden");
+    d3.select("#refButt")
+    .on("click",function(){
+        d3.select("#refModal").attr("visibility", "visible");})
             
     g_exprValColorMap = exprValColormap();
     g_selectedRow = 0;

@@ -2291,9 +2291,20 @@ function rnaViewerMain()
     //     .attr("visibility", "hidden");
 
     d3.select("langSwitchButt").attr("visibility", "hidden");
+    d3.select("#refModal")
+    .on("click", function(){
+        console.log("refmodal clicked!");
+        this.attr("display", "none");
+        // this.attr("display", "none");
+        });
+
     d3.select("#refButt")
     .on("click",function(){
-        d3.select("#refModal").attr("visibility", "visible");})
+
+        console.log("refButt clicked!");
+        d3.select("#refModal")
+        .attr("display", "block");
+    });
             
     g_exprValColorMap = exprValColormap();
     g_selectedRow = 0;

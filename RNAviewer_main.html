@@ -23,7 +23,7 @@
 
 			<button id="langSwitchButt" class="w3-left w3-padding-12">中文/English</button>
 			<div id="refButtDiv" class = "w3-right w3-padding-16">
-				<button id = "refButt" class = "w3-button w3-black">
+				<button id = "refButt" class = "w3-button w3-black" onclick="document.getElementById('refModal').style.display='block'">
 					参考图
 				</button>
 			</div>
@@ -34,9 +34,16 @@
 		<!-- <h2><b>Skin RNA Viewer</b></h2> -->
 	</div>
 
-	<div id="refModal" class="w3-modal">
-		<div class="w3-modal-content w3-container w3-row-padding" style="width:800px;height:462px">
+	<div id="refModal" class="w3-modal" >
+		<div class="w3-modal-content">
+		<header class="w3-container w3-teal"> 
+			<span onclick="document.getElementById('refModal').style.display='none'" 
+			class="w3-button w3-display-topright">&times;</span>
+			<h2>Reference</h2>
+			</header>
+			<div class="w3-container w3-row-padding" style="width:800px;height:462px">
 			<img src="./data/info_img.png" style="width:800px;height:462px"></img>
+			</div>
 		</div>
 	</div>
 	<hr id="intro">

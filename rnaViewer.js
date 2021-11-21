@@ -2229,7 +2229,7 @@ function redrawAll()
     // Return if tpmFullData is not ready
     if (g_tpmFullData == [])
         return;
-    d3.select(".dotplotSex").remove();
+    d3.selectAll(".dotplotSex").remove();
     drawDotplots(g_tpmFullData[g_selectedRow], g_tpmSubInfo, "dotplotSex", "#dotplotView",
         g_dpwidth, g_dpheight, g_margin);
 
@@ -2294,7 +2294,7 @@ function rnaViewerMain()
     d3.select("#refModal")
     .on("click", function(){
         console.log("refmodal clicked!");
-        this.attr("display", "none");
+        // this.attr("display", "none");
         // this.attr("display", "none");
         });
 

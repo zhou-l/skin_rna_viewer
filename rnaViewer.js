@@ -2203,7 +2203,9 @@ function redrawAll()
     if(g_selectedRow < 0 || g_selectedRow >= g_tpmFullData.length)
     return;
     // Update UI
+    var headStr="皮肤RNA视图";
     if(g_isEnglish){
+        headStr = "Skin RNA Viewer";
         d3.select("#rnaSearchButton").text("Search");
         d3.select("#rnaSearchBox").attr("placeholder","search an RNA, for example, A1BG");
 
@@ -2213,7 +2215,10 @@ function redrawAll()
         d3.select("#rnaSearchButton").text("搜索");
         d3.select("#rnaSearchBox")
         .attr("placeholder","输入RNA进行搜素，例如, A1BG");
+        headStr= "皮肤RNA视图";
     }
+           
+    document.getElementById("headText").innerHTML = headStr;
     redrawBodyViews();
 
     // update the text 
@@ -2432,15 +2437,16 @@ function rnaViewerMain()
 
                         progText.text(function(){return "数据读取中" +"...";})
                         // progText.text(function(){return "<p>数据读取时间较长，请稍等.</p><p>请不要关闭窗口!</p>" +"..." ;})
-                        var infoText = "数据读取时间较长，请稍等. 请不要关闭窗口!\n若浏览器提示页面未响应，请选择‘等待’.";
+                        var infoText = "数据读取时间较长，请稍等. 此次读取后再次搜索将无需再次缓冲. \n 请不要关闭窗口! 若浏览器提示页面未响应，请选择‘等待’. \n 数据读取跳转新页面后不要刷新窗口! ";
                         progText.selectAll("tspan.text")
                             .data(d => infoText.split("\n"))
                             .enter()
                             .append("tspan")
                             .attr("class", "text")
                             .text(d => d)
-                            .style("font-size", "16px")
-                            .attr("x", 120)
+                            .style("font-size", "15px")
+                            .style("text-anchor","center")
+                             .attr("x", 120)
                             .attr("dx", 10)
                             .attr("dy", 52);
 
@@ -2492,14 +2498,28 @@ function rnaViewerMain()
                             return "搜索";
                     })
 
-                d3.select("#headText")
-                   .attr("h2",function(){
-                       if(g_isEnglish)
-                       return "Skin RNA Viewer";
-                       else
-                       return "皮肤RNA视图";
-                   })
-    
+                // d3.selectAll("#headText")
+                //    .attr("text",function(){
+                //        if(g_isEnglish)
+                //        return "Skin RNA Viewer";
+                //        else
+                //        return "皮肤RNA视图";
+                //    })
+                // d3.select("div.h2")
+                if(g_isEnglish)
+                 headStr = "Skin RNA Viewer";
+                else
+                 headStr= "皮肤RNA视图";
+                
+                document.getElementById("headText").innerHTML = headStr;
+
+                // d3.select(".headText")
+                // .text(function(){
+                //     if(g_isEnglish)
+                //        return "Skin RNA Viewer";
+                //        else
+                //        return "皮肤RNA视图";
+                // });
 
                 // 2. setup search box
                 setupSearchView(g_tpmFullData, "searchArea", "#rnaSearchBox", g_bvwidth, g_bvheight, g_margin);
